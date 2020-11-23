@@ -1,0 +1,15 @@
+header {
+  background: rgb(51, 51, 51);
+  display: block;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: 1rem 5rem;
+}
+
+header p {
+  text-align: right;
+}
