@@ -21,15 +21,18 @@ class CountriesAPI extends Component {
             return <p>Loading...</p>;
         }
         return (
-            <ul>
-                {this.state.countries.map((country) => (
-                    <li key={country.alpha3code}>
-                        <h3>{country.name}</h3>
-                        <p>Capital: {country.capital}</p>
-                        <img src={country.flag} alt={country.name} />
-                    </li>
-                ))}
-            </ul>
+            <>
+                <h1 className="list-title">List of Countries</h1>
+                <ul>
+                    {this.state.countries.map((country) => (
+                        <li key={country.alpha3code}>
+                            <h3>{country.name}</h3>
+                            <p>Capital: {country.capital}</p>
+                            <img src={country.flag} alt={country.name} />
+                        </li>
+                    ))}
+                </ul>
+            </>
         );
     }
 }

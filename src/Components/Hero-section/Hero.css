@@ -1,5 +1,5 @@
 main.hero {
-  height: 70vh;
+  height: 90vh;
   width: 100%;
   background: #333333
     url("https://cdn.pixabay.com/photo/2017/07/20/14/50/a-bear-2522509_960_720.jpg")
@@ -8,10 +8,12 @@ main.hero {
 
 .hero-title {
   font-size: 3rem;
-  padding: 10rem 0 0 5rem;
+  padding: 15rem 0 0 5rem;
+  font-family: "Big Shoulders Stencil Display", cursive;
 }
 
 .hero-text {
   font-size: 2rem;
   padding: 2rem 0 0 5rem;
+  font-family: "Big Shoulders Stencil Display", cursive;
 }

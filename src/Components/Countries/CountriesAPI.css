@@ -1,3 +1,10 @@
+.list-title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Big Shoulders Stencil Display", cursive;
+  padding: 2rem;
+}
+
 img {
   width: 100px;
 }
