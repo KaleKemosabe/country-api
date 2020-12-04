@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './CountriesAPI.css';
-
-const API = "https://restcountries.eu/rest/v2/all";
+// const API = "https://restcountries.eu/rest/v2/all";
+const API = "https://restcountries.eu/rest/v2/region/europe";
 
 class CountriesAPI extends Component {
     state = {
+        continents: [
+            {value: 'Asia'},
+            {value: 'Europe'},
+            {value: 'Oceania'},
+            {value: 'Africa'},
+            {value: 'Americas'},
+            {value: 'Polar'},
+        ],
         countries: [],
         isLoading: false,
     };
@@ -13,21 +21,33 @@ class CountriesAPI extends Component {
     componentDidMount() {
         this.setState({ isLoading: true });
 
-        axios.get(API).then((response) => this.setState({ countries: response.data, isLoading: false }));
+        axios.get(API).then((response) => this.setState({ continents: response.data, countries: response.data, isLoading: false }));
     };
 
     render() {
         if (this.state.isLoading) {
             return <p>Loading...</p>;
         }
+
         return (
             <>
-                <h1 className="list-title">List of Countries</h1>
+                <h1 className="list-title">Region - Europe</h1>
+                <h2 className="api-info">Country information via a RESTful API (<i>restcountries.eu</i>)</h2>
+                <h2><i>Other regions coming soon...</i></h2>
+                <section className="region-selection">
+                    {/* <button onClick={this.regionSelector}>Asia</button> */}
+                    <button>Asia</button>
+                    <button>Europe</button>
+                    <button>Oceania</button>
+                    <button>Africa</button>
+                    <button>Americas</button>
+                    <button>Polar</button>
+                </section>
                 <ul>
                     {this.state.countries.map((country) => (
                         <li key={country.alpha3code}>
                             <h3>{country.name}</h3>
-                            <p>Capital: {country.capital}</p>
+                            <p className="capital">Capital: {country.capital}</p>
                             <img src={country.flag} alt={country.name} />
                         </li>
                     ))}
