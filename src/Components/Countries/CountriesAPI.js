@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Popup from '../Popup/Popup';
 import './CountriesAPI.css';
 // const API = "https://restcountries.eu/rest/v2/all";
 const API = "https://restcountries.eu/rest/v2/region/europe";
@@ -49,9 +50,19 @@ class CountriesAPI extends Component {
                             <h3>{country.name}</h3>
                             <p className="capital">Capital: {country.capital}</p>
                             <img src={country.flag} alt={country.name} />
+                            <input className="button" type="submit" value="See more" />{" "}
                         </li>
                     ))}
                 </ul>
+                {this.state.showPopup && (
+                <Popup 
+                    name={this.state.name}
+                    name={this.state.capital}
+                    name={this.state.region}
+                    name={this.state.subregion}
+                    name={this.state.population}
+                />
+                )}
             </>
         );
     }
