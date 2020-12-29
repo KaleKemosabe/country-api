@@ -6,6 +6,10 @@ footer {
   display: grid;
   justify-items: center;
   align-items: center;
-  height: 4rem;
+  height: 3rem;
   padding: 0.5rem;
+}
+
+.copyright {
+  text-align: center;
 }

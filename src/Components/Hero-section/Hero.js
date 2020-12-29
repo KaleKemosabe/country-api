@@ -5,8 +5,8 @@ const Hero = () => {
 
     return (
         <main className="hero">
-            <h1 className="hero-title">This is Europe</h1>
-            <p className="hero-text">Check out flags and find out more about European countries</p>
+            <h1 className="hero-title">Travel News</h1>
+            <p className="hero-text">Europe's country details and main news</p>
         </main>
     );
   };
