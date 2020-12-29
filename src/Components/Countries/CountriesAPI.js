@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Popup from '../Popup/Popup';
+// import Popup from '../Popup/Popup';
 import './CountriesAPI.css';
 import { Button, Modal } from 'react-bootstrap';
 // const API = "https://restcountries.eu/rest/v2/all";
@@ -46,12 +46,12 @@ class CountriesAPI extends Component {
                 <h4 className="api-info">Country information via a RESTful API (<i>restcountries.eu</i>)</h4>
                 <h4><i>Other regions coming soon...</i></h4>
                 <section className="region-selection">
-                    <button>Asia</button>
-                    <button>Europe</button>
-                    <button>Oceania</button>
-                    <button>Africa</button>
-                    <button>Americas</button>
-                    <button>Polar</button>
+                    <Button variant="secondary">Asia</Button>
+                    <Button variant="secondary">Europe</Button>
+                    <Button variant="secondary">Oceania</Button>
+                    <Button variant="secondary">Africa</Button>
+                    <Button variant="secondary">Americas</Button>
+                    <Button variant="secondary">Polar</Button>
                 </section>
                 <ul>
                     {this.state.countries.map((country) => (
@@ -59,18 +59,19 @@ class CountriesAPI extends Component {
                             <h3>{country.name}</h3>
                             <img src={country.flag} alt={country.name} />
                             <Button variant="link" onClick={() => {this.handleModal()}}>Details</Button>
-                            {/* <input className="button" type="submit" value="See more" />{" "} */}
                             <Modal show={this.state.show} onHide={() => this.closeModal()}>
-                                <Modal.Header closeButton>Header</Modal.Header>
+                                <Modal.Header closeButton><b>{country.name}</b></Modal.Header>
                                 <Modal.Body>
-                                    react Body
+                                    <p>Capital: {country.capital}</p>
+                                    <p>Population: {country.population}</p>
+                                    <p>Native name: {country.nativeName}</p>
+                                    <p>Borders: {country.borders}</p>
                                 </Modal.Body>
-                                <Modal.Footer>footer</Modal.Footer>
                             </Modal>
                         </li>
                     ))}
                 </ul>
-                {this.state.showPopup && (
+                {/* {this.state.showPopup && (
                 <Popup 
                     name={this.state.name}
                     capital={this.state.capital}
@@ -78,7 +79,7 @@ class CountriesAPI extends Component {
                     subregion={this.state.subregion}
                     population={this.state.population}
                 />
-                )}
+                )} */}
             </>
         );
     }

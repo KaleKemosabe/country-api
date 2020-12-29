@@ -40,7 +40,6 @@ class App extends Component {
         <div className="main-area">
           <Hero />
           <CountriesAPI />
-          {/* <Popup /> */}
         </div>
         <Footer />
       </>

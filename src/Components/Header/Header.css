@@ -1,15 +1,13 @@
 header {
-  background-color: #76a3d3;
+  background-color: #333333;
   display: block;
   color: #ffffff;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: space-between;
-  align-items: center;
-  height: 5rem;
-  padding: 1rem 5rem;
+  text-align: center;
+  height: 4rem;
+  padding: 0.8rem 5rem;
 }
 
-header p {
-  text-align: right;
+header h1 {
+  font-size: 2rem;
+  font-family: serif;
 }

@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <header>
       <h1>Travel News Europe</h1>
-      <p><i class="fas fa-bars fa-2x"></i></p>
     </header>
   );
 };
