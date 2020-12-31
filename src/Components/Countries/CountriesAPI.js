@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import Popup from '../Popup/Popup';
 import './CountriesAPI.css';
 import { Button, Modal } from 'react-bootstrap';
-// const API = "https://restcountries.eu/rest/v2/all";
 const API = "https://restcountries.eu/rest/v2/region/europe";
 
 class CountriesAPI extends Component {
     state = {
-        continents: [
-            {value: 'Asia'},
-            {value: 'Europe'},
-            {value: 'Oceania'},
-            {value: 'Africa'},
-            {value: 'Americas'},
-            {value: 'Polar'},
-        ],
+        name: "",
+        capital: "",
+        region: "",
+        subregion: "",
+        population: "",
         countries: [],
         isLoading: false,
         show: false,
@@ -23,8 +18,7 @@ class CountriesAPI extends Component {
 
     componentDidMount() {
         this.setState({ isLoading: true });
-
-        axios.get(API).then((response) => this.setState({ continents: response.data, countries: response.data, isLoading: false }));
+        axios.get(API).then((response) => this.setState({ countries: response.data, isLoading: false }));
     };
 
     handleModal() {
@@ -39,7 +33,6 @@ class CountriesAPI extends Component {
         if (this.state.isLoading) {
             return <p>Loading...</p>;
         }
-
         return (
             <>
                 <h2 className="list-title">European Countries</h2>
@@ -71,15 +64,6 @@ class CountriesAPI extends Component {
                         </li>
                     ))}
                 </ul>
-                {/* {this.state.showPopup && (
-                <Popup 
-                    name={this.state.name}
-                    capital={this.state.capital}
-                    region={this.state.region}
-                    subregion={this.state.subregion}
-                    population={this.state.population}
-                />
-                )} */}
             </>
         );
     }

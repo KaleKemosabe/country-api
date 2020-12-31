@@ -5,7 +5,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Travel News Europe</h1>
+      <h1>Useless Country App</h1>
     </header>
   );
 };
