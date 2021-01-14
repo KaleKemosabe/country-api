@@ -10,6 +10,10 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
+h4.others {
+  margin-bottom: 4rem;
+}
+
 .list-title {
   text-align: center;
   font-size: 3rem;

@@ -2,8 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import Header from './Components/Header/Header';
 import Hero from './Components/Hero-section/Hero';
+import Search from './Components/Search/Search';
 import CountriesAPI from './Components/Countries/CountriesAPI';
-// import Popup from './Components/Popup/Popup';
 import Footer from './Components/Footer/Footer';
 
 class App extends Component {
@@ -39,6 +39,7 @@ class App extends Component {
         <Header />
         <div className="main-area">
           <Hero />
+          <Search />
           <CountriesAPI />
         </div>
         <Footer />

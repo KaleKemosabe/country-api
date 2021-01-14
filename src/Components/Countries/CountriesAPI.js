@@ -37,15 +37,15 @@ class CountriesAPI extends Component {
             <>
                 <h2 className="list-title">European Countries</h2>
                 <h4 className="api-info">Country information via a RESTful API (<i>restcountries.eu</i>)</h4>
-                <h4><i>Other regions coming soon...</i></h4>
-                <section className="region-selection">
+                <h4 className="others"><i>Other regions coming soon...</i></h4>
+                {/* <section className="region-selection">
                     <Button variant="secondary">Asia</Button>
                     <Button variant="secondary">Europe</Button>
                     <Button variant="secondary">Oceania</Button>
                     <Button variant="secondary">Africa</Button>
                     <Button variant="secondary">Americas</Button>
                     <Button variant="secondary">Polar</Button>
-                </section>
+                </section> */}
                 <ul>
                     {this.state.countries.map((country) => (
                         <li key={country.alpha3code}>
