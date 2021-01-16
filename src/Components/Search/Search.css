@@ -2,7 +2,12 @@
   padding-top: 5rem;
 }
 
-.input-field {
-  padding: 1rem;
+.search {
+  padding: 5rem;
   text-align: center;
+  background-color: lightgray;
+}
+
+.input-field {
+  margin: 2rem 0;
 }

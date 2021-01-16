@@ -39,8 +39,8 @@ class App extends Component {
         <Header />
         <div className="main-area">
           <Hero />
-          <Search />
           <CountriesAPI />
+          <Search />
         </div>
         <Footer />
       </>

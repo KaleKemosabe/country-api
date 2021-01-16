@@ -5,25 +5,26 @@ import { Input } from 'antd';
 
 function Search() {
   const [inputItems, setInputItems] = useState([])
-  const [users, setUsers] = useState([])
-  const [singleUser, setSingleUser] = useState('')
+  const [countries, setCountries] = useState([])
+  const [singleCountry, setsingleCountry] = useState('')
 
   useEffect(() => {
-    fetch("https://restcountries.eu/rest/v2/all").then((response) => response.json()).then((data) => setUsers(data))
+    fetch("https://restcountries.eu/rest/v2/all").then((response) => response.json()).then((data) => setCountries(data))
   }, [])
 
   const { isOpen, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } = useCombobox({
     items: inputItems,
     onInputValueChange: ({ inputValue }) => {
       setInputItems(
-        users.filter((item) => item.name.toLowerCase().startsWith(inputValue.toLowerCase())
+        countries.filter((item) => item.name.toLowerCase().startsWith(inputValue.toLowerCase())
         )
       )
     }
   })
 
-  return <div className="Search">
-    <h2 className="search-heading">Search for country details: {singleUser}</h2>
+  return <div className="search">
+    <h2 className="search-heading">How about the rest of the world?</h2>
+    <h3>Search for country details: {singleCountry}</h3>
     <div className="input-field" {...getComboboxProps()}>
       <Input {...getInputProps()}
         placeholder="Search"
@@ -33,8 +34,8 @@ function Search() {
     </div>
     <ul {...getMenuProps()}>
       {isOpen && inputItems.map((item, index) => (
-          <span key={item.id} {...getItemProps({item, index})} onClick={() => setSingleUser(item.name)}>
-            <li style={highlightedIndex === index ? {background: "#ede"} : {}}>
+          <span key={item.id} {...getItemProps({item, index})} onClick={() => setsingleCountry(item.name)}>
+            <li style={highlightedIndex === index ? {background: "#add8e6"} : {}}>
               <h4>{item.name}</h4>
             </li>
           </span>
