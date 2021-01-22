@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './CountriesAPI.css';
-import { Button, Modal } from 'react-bootstrap';
 const API = "https://restcountries.eu/rest/v2/region/europe";
 
 class CountriesAPI extends Component {
@@ -35,23 +34,18 @@ class CountriesAPI extends Component {
         }
         return (
             <>
-                <h2 className="list-title">European Countries</h2>
-                <h4 className="api-info">Country information via a RESTful API (<i>restcountries.eu</i>)</h4>
-                <h4 className="others"><i>Other regions coming soon...</i></h4>
-                {/* <section className="region-selection">
-                    <Button variant="secondary">Asia</Button>
-                    <Button variant="secondary">Europe</Button>
-                    <Button variant="secondary">Oceania</Button>
-                    <Button variant="secondary">Africa</Button>
-                    <Button variant="secondary">Americas</Button>
-                    <Button variant="secondary">Polar</Button>
-                </section> */}
+                <div className="title-container">
+                    <h2 className="list-title">European Countries</h2>
+                    <h4 className="api-info">Quick country facts including name, capital, population and flag. Search field at the bottom for checking out same details outside of Europe. Country information via a RESTful API (<i>restcountries.eu</i>)</h4>
+                </div>
                 <ul>
                     {this.state.countries.map((country) => (
                         <li key={country.alpha3code}>
                             <h3>{country.name}</h3>
+                            <h5>Capital: {country.capital}</h5>
+                            <h5>Population: {country.population}</h5>
                             <img src={country.flag} alt={country.name} />
-                            <Button variant="link" onClick={() => {this.handleModal()}}>Details</Button>
+                            {/* <Button variant="link" onClick={() => {this.handleModal()}}>Details</Button>
                             <Modal show={this.state.show} onHide={() => this.closeModal()}>
                                 <Modal.Header closeButton><b>{country.name}</b></Modal.Header>
                                 <Modal.Body>
@@ -60,7 +54,7 @@ class CountriesAPI extends Component {
                                     <p>Native name: {country.nativeName}</p>
                                     <p>Borders: {country.borders}</p>
                                 </Modal.Body>
-                            </Modal>
+                            </Modal> */}
                         </li>
                     ))}
                 </ul>

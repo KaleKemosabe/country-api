@@ -35,8 +35,11 @@ function Search() {
     <ul {...getMenuProps()}>
       {isOpen && inputItems.map((item, index) => (
           <span key={item.id} {...getItemProps({item, index})} onClick={() => setsingleCountry(item.name)}>
-            <li style={highlightedIndex === index ? {background: "#add8e6"} : {}}>
-              <h4>{item.name}</h4>
+            <li style={highlightedIndex === index ? {background: "rgba(255, 255, 255, 0.2)", padding: "1rem", borderRadius: "5px", boxShadow: "1px 1px 2px 2px #333333"} : {}}>
+              <h3>{item.name}</h3>
+              <h5>Capital: {item.capital}</h5>
+              <h5>Population: {item.population}</h5>
+              <img src={item.flag} alt={item.name} />
             </li>
           </span>
         ))  
